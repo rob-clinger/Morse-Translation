@@ -25,7 +25,7 @@ alphabet = {
     'x':'-..-',
     'y':'-.--',
     'z':'--..',
-    ' ':'  '        #for spaces
+    ' ':'  '        # for spaces
 }
 numbers = {
     '1':'.----',
@@ -39,18 +39,25 @@ numbers = {
     '9':'----.',
     '0':'-----'
 }
-userinput = input('Enter a letter: ')
+userinput = input('Enter a letter or number: ')
 
-for i in alphabet, numbers:
-    if userinput in alphabet:
+# Check to see if user input is a letter or number, and find within the dictionaries
+if userinput in alphabet:
+    for i in alphabet:
         if i == userinput:
             print(alphabet[str([i][0])])
-    elif userinput in numbers:
+        else:
+            pass
+elif userinput in numbers:
+    for i in numbers:
         if i == userinput:
             print(numbers[str([i][0])])
-    else:
-        print('Not found.')
+        else:
+            pass
+else:
+    print('Not found!')
 
+# User enters a word or sentence and then gets constructed in Morse Code
 userWord = list(input('Enter a word or message: '))
 morseWord = []
 for x in userWord:
