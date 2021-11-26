@@ -56,18 +56,18 @@ def getCharacters():
 
 def morseEncode(word):
     morseWord = []
-    for x in word:
-        if x in alphabet:
-            for y in alphabet:
-                if x == y:
-                    morseLetter = alphabet[str([y][0])]
+    for i in word:
+        if i in alphabet:
+            for x in alphabet:
+                if i == x:
+                    morseLetter = alphabet[str([i][0])]
                     morseWord.append(morseLetter)
                 else:
                     pass
-        elif x in numbers:
-            for z in numbers:
-                if x == z:
-                    morseNum = numbers[str([z][0])]
+        elif i in numbers:
+            for x in numbers:
+                if i == x:
+                    morseNum = numbers[str([i][0])]
                     morseWord.append(morseNum)
                 else:
                     pass
