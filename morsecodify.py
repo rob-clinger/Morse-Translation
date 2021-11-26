@@ -40,6 +40,20 @@ numbers = {
     '0':'-----'
 }
 
+def getCharacters():
+    # Create table for alphabet 
+    print("{0:5} | {1:^5}".format("Letter", "Morse Character"))
+    print("=======================")
+    for char in alphabet:
+        print("{0:^6} | {1:^6}".format(char,alphabet[str([char][0])]))
+    
+    # Create table for numbers
+    print("{0:5} | {1:^5}".format("Number", "Morse Number"))
+    print("=======================")
+    for num in numbers:
+        print("{0:^6} | {1:^6}".format(num,numbers[str([num][0])]))
+    print("")
+
 def morseEncode(word):
     morseWord = []
     for x in word:
@@ -76,13 +90,16 @@ if __name__ == '__main__':
     while True:
         userChoice = input("Make a selection below to continue.\n"
                         "[1] Enter a message to translate to Morse Code.\n"
-                        "[2] Exit.\n"
+                        "[2] View Characters.\n"
+                        "[3] Exit.\n"
                         "> ")
 
         if userChoice == "1":
             userInput = list(input("Enter a Letter, Number, Word, or Message: "))
             morseEncode(userInput)
         elif userChoice == "2":
+            getCharacters()
+        elif userChoice == "3":
             exit()
         else:
             print("That is not a valid choice.")
