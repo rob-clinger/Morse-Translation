@@ -5,5 +5,3 @@
 ___
 
 **Description:** Take user input and translate into Morse Code.
-
-test.
