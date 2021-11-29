@@ -14,8 +14,9 @@ if __name__ == '__main__':
     while True:
         userChoice = input("Make a selection below to continue.\n"
                         "[1] Enter a message to translate to Morse Code.\n"
-                        "[2] View Characters.\n"
-                        "[3] Exit.\n"
+                        "[2] Enter a Morse Code message to be translated.\n"
+                        "[3] View Characters.\n"
+                        "[4] Exit.\n"
                         "> ")
 
         if userChoice == "1":
@@ -23,8 +24,12 @@ if __name__ == '__main__':
             customList = list(userInput)
             Translator.morseEncode(customList)
         elif userChoice == "2":
-            Translator.getCharacters()
+            encodedInput = str(input("Enter your Morse Code letter, number, or message: "))
+            encodedList = list(encodedInput)
+            Translator.morseDecoded(encodedList)
         elif userChoice == "3":
+            Translator.getCharacters()
+        elif userChoice == "4":
             exit()
         else:
             print("That is not a valid choice.")
