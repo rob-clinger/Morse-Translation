@@ -1,73 +1,33 @@
-alphabet = {
-    'a':'.-',
-    'b':'-...',
-    'c':'-.-.',
-    'd':'-..',
-    'e':'.',
-    'f':'..-.',
-    'g':'--.',
-    'h':'....',
-    'i':'..',
-    'j':'.---',
-    'k':'-.-',
-    'l':'.-..',
-    'm':'--',
-    'n':'-.',
-    'o':'---',
-    'p':'.--.',
-    'q':'--.-',
-    'r':'.-.',
-    's':'...',
-    't':'-',
-    'u':'..-',
-    'v':'...-',
-    'w':'.--',
-    'x':'-..-',
-    'y':'-.--',
-    'z':'--..',
-    ' ':'  '        # for spaces
-}
-numbers = {
-    '1':'.----',
-    '2':'..---',
-    '3':'...--',
-    '4':'....-',
-    '5':'.....',
-    '6':'-....',
-    '7':'--...',
-    '8':'---..',
-    '9':'----.',
-    '0':'-----'
-}
+import characters
 
 def getCharacters():
     # Create table for alphabet 
     print("{0:5} | {1:^5}".format("Letter", "Morse Character"))
     print("=======================")
-    for char in alphabet:
-        print("{0:^6} | {1:^6}".format(char,alphabet[str([char][0])]))
+    for char in characters.alphabet:
+        print("{0:^6} | {1:^6}".format(char,characters.alphabet[str([char][0])]))
     
     # Create table for numbers
     print("{0:5} | {1:^5}".format("Number", "Morse Number"))
     print("=======================")
-    for num in numbers:
-        print("{0:^6} | {1:^6}".format(num,numbers[str([num][0])]))
+    for num in characters.numbers:
+        print("{0:^6} | {1:^6}".format(num,characters.numbers[str([num][0])]))
     print("")
 
 def morseEncode(word):
     morseWord = []
     for i in word:
-        if i in alphabet:
-            for x in alphabet:
+        if i in characters.alphabet:
+            for x in characters.alphabet:
                 if i == x:
-                    morseLetter = alphabet[str([i][0])]
+                    morseLetter = characters.alphabet[str([i][0])]
                     morseWord.append(morseLetter)
                 else:
                     pass
-        elif i in numbers:
-            for x in numbers:
+        elif i in characters.numbers:
+            for x in characters.numbers:
                 if i == x:
-                    morseNum = numbers[str([i][0])]
+                    morseNum = characters.numbers[str([i][0])]
                     morseWord.append(morseNum)
                 else:
                     pass
@@ -95,8 +55,9 @@ if __name__ == '__main__':
                         "> ")
 
         if userChoice == "1":
-            userInput = list(input("Enter a Letter, Number, Word, or Message: "))
-            morseEncode(userInput)
+            userInput = input("Enter a Letter, Number, Word, or Message: ").lower()
+            customList = list(userInput)
+            morseEncode(customList)
         elif userChoice == "2":
             getCharacters()
         elif userChoice == "3":
