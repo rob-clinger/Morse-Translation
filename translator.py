@@ -42,16 +42,17 @@ class Translator:
         print('Your message in Morse Code: ',*morseWord)
     
     def morseDecoded(message):
-        #print (message)
-        # 11/29/21 - Currently can take one letter at a time, ie. 'test' in morse is '- . ... -' and is being stored in message as ['-',' ',' .',' ',' .',' .',' .',' ',' -']  
+        cleanMessage = ''.join(map(str, message)).replace(' ',',')
+        msgToDecode = cleanMessage.split(',') 
         decoded = []
         letterKeys = list(characters.alphabet.keys())
         letterVals = list(characters.alphabet.values())
 
-        for i in message:
+        for i in msgToDecode:
             if i in letterVals:
                 getKey = letterVals.index(i)
                 decoded.append(letterKeys[getKey])
             else:
                 print('not found.')
-        print(decoded)
+        # Return the encoded message to plaintext
+        print(''.join(decoded)) 
