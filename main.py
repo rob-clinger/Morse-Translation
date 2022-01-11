@@ -11,7 +11,7 @@ if __name__ == '__main__':
     print("     -- --- .-. ... .    -.-. --- -.. .. ..-. -.--     __/ |")
     print("                                                      |___/ \n")
 
-    # Main loop for user interaction
+    
     while True:
         userChoice = input("Make a selection below to continue.\n"
                         "[1] Enter a message to translate to Morse Code.\n"
